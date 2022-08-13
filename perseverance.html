@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <!-- Navbar Element -->
   <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">Home</a>
@@ -45,14 +46,28 @@
     </div>
   </div>
 
+  <!-- Date Input Element -->
   <div class="container-fluid bg-black">
-    <div class="row">
-      <div class="col">
-        <input type="date">
+    <div class="row ">
+      <div class="col-auto">
+        <input type="date" id="dateInput">
       </div>
     </div>
   </div>
-  <!-- Checkboxes for 15 cameras on the Perseverance Rover-->
+
+  <!-- Date input event and handling -->
+<script>
+  const dateInput = document.getElementById('dateInput');
+
+  dateInput.addEventListener('change', event=>{
+    const inputDate = new Date(dateInput.value);
+    // Need to add 1 to the date for some reason
+    inputDate.setDate(inputDate.getDate() + 1);
+    console.log(inputDate.getDate());
+  })
+</script>
+
+  <!-- Checkboxes for 15 cameras on the Perseverance Rover and Submit button-->
   <div class="container-fluid bg-black">
     <div class="row g-0" id="cameras">
       <div class="col-auto">
@@ -161,11 +176,11 @@
   <!-- Gallery of Images. 
       responses are limited to 25 photos per call. more are put on different pages accessed by page param in query 
       ex: http://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?sol=1000&page=2 -->
-      <!-- <div class="list" id="list">
+      <div class="list" id="list">
       </div>
       <div class="pagenumbers" id="pagination"></div>
 
-      <script src="gallery.js"></script> -->
+      <script src="gallery.js"></script>
 
 
       <!-- <div class="row p-5">
@@ -183,12 +198,9 @@
         </div>
       </div> -->
 
+      
+      <!-- Captures user input from the checkbox submission-->
     <p id="testing"></p>
-
-
-    <script>
-
-    </script>
     <script>
       const submit = document.getElementById('submitCamerasButton')
       const cameraList = document.getElementById('cameras').getElementsByClassName('list-group-item bg-dark small py-1');

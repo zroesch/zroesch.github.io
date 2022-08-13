@@ -1,5 +1,27 @@
 PHOTO_API = "http://mars-photos.herokuapp.com/api/v1/rovers/";
+// Perseverance Rover
+class Perseverance{
+	cameras = {
+		EDL_RUCAM: "EDL_RUCAM"
+	}
+}
+// Date function objects
 
+// function apiCall(rover, sol, earthDate,  camera){
+// 	rover;
+// 	sol;
+// 	earthDate;
+// 	camera;
+
+// 	constructor()
+// }
+
+
+// Curiosity Rover
+
+
+
+// Oppurtunity and Spirit Rovers
 const list_items = [
 	"Item 1",
 	"Item 2",
