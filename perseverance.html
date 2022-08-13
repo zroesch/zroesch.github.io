@@ -9,6 +9,7 @@
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css" />
   <script type="text/javascript" src="rover_information.js"></script>
+  <link rel="shortcut icon" href="">
 </head>
 
 <body>
@@ -44,6 +45,13 @@
     </div>
   </div>
 
+  <div class="container-fluid bg-black">
+    <div class="row">
+      <div class="col">
+        <input type="date">
+      </div>
+    </div>
+  </div>
   <!-- Checkboxes for 15 cameras on the Perseverance Rover-->
   <div class="container-fluid bg-black">
     <div class="row g-0" id="cameras">
@@ -153,14 +161,14 @@
   <!-- Gallery of Images. 
       responses are limited to 25 photos per call. more are put on different pages accessed by page param in query 
       ex: http://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?sol=1000&page=2 -->
-      <div class="list" id="list">
+      <!-- <div class="list" id="list">
       </div>
       <div class="pagenumbers" id="pagination"></div>
 
-      <script src="gallery.js"></script>
+      <script src="gallery.js"></script> -->
 
 
-      <div class="row p-5">
+      <!-- <div class="row p-5">
         <div class="col-3">
           <img src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG" class="rounded img-fluid">
         </div>
@@ -173,16 +181,32 @@
         <div class="col-3">
           <img src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG" class="rounded img-fluid">
         </div>
-      </div>
+      </div> -->
+
     <p id="testing"></p>
 
+
+    <script>
+
+    </script>
     <script>
       const submit = document.getElementById('submitCamerasButton')
-      const cameraList = document.getElementById('cameras').getElementsByTagName('label');
+      const cameraList = document.getElementById('cameras').getElementsByClassName('list-group-item bg-dark small py-1');
       const testingList = document.getElementById('testing');
-      submit.addEventListener('click', () => {
-        for (let i = 0; i < cameraList.length - 1; i++) {
-          testingList.append(cameraList[i].innerHTML);
+
+      submit.addEventListener('click', event=>{
+        while(testingList.firstChild){
+          testingList.removeChild(testingList.firstChild);
+        }
+        for(let i = 0; i < cameraList.length; i++){
+          if(cameraList[i].firstElementChild.checked == true){
+            let item = cameraList[i].firstElementChild.id;
+            let item_element = document.createElement('div');
+            item_element.classList.add('item');
+            item_element.innerText = item;
+
+            testingList.appendChild(item_element);
+          };
         }
       })
     </script>
