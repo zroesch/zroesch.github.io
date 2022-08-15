@@ -63,10 +63,13 @@
     const inputDate = new Date(dateInput.value);
     // Need to add 1 to the date for some reason
     inputDate.setDate(inputDate.getDate() + 1);
-    console.log(inputDate.getDate());
+    // Set variables for day, month, and year
+    var day = inputDate.getDate();
+    var month = inputDate.getMonth();
+    var year = inputDate.getFullYear();
+    console.log(day.toString() + month.toString() + year.toString());
   })
 </script>
-
   <!-- Checkboxes for 15 cameras on the Perseverance Rover and Submit button-->
   <div class="container-fluid bg-black">
     <div class="row g-0" id="cameras">
@@ -176,8 +179,12 @@
   <!-- Gallery of Images. 
       responses are limited to 25 photos per call. more are put on different pages accessed by page param in query 
       ex: http://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?sol=1000&page=2 -->
-      <div class="list" id="list">
+
+    <div class="container-fluid bg-dark">
+      <div class="row row-cols-4" id="gallery">
       </div>
+      </div>
+
       <div class="pagenumbers" id="pagination"></div>
 
       <script src="gallery.js"></script>

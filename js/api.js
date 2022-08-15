@@ -1,29 +1,37 @@
-PHOTO_API = "http://mars-photos.herokuapp.com/api/v1/rovers/";
+PHOTO_API = "https://api.nasa.gov/mars-photos/api/v1/";
+API_KEY = "StNlCS93Xlj0xJVWSdFm27AdrCpMxr8HvlYrQub5";
 
-const list_items = [
-	"Item 1",
-	"Item 2",
-	"Item 3",
-	"Item 4",
-	"Item 5",
-	"Item 6",
-	"Item 7",
-	"Item 8",
-	"Item 9",
-	"Item 10",
-	"Item 11",
-	"Item 12",
-	"Item 13",
-	"Item 14",
-	"Item 15",
-	"Item 16",
-	"Item 17",
-	"Item 18",
-	"Item 19",
-	"Item 20",
-	"Item 21",
-	"Item 22"
-];
+
+
+// const list_items = [
+// 	"Item 1",
+// 	"Item 2",
+// 	"Item 3",
+// 	"Item 4",
+// 	"Item 5",
+// 	"Item 6",
+// 	"Item 7",
+// 	"Item 8",
+// 	"Item 9",
+// 	"Item 10",
+// 	"Item 11",
+// 	"Item 12",
+// 	"Item 13",
+// 	"Item 14",
+// 	"Item 15",
+// 	"Item 16",
+// 	"Item 17",
+// 	"Item 18",
+// 	"Item 19",
+// 	"Item 20",
+// 	"Item 21",
+// 	"Item 22"
+// ];
+
+fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=StNlCS93Xlj0xJVWSdFm27AdrCpMxr8HvlYrQub5&sol=1000')
+    .then(response => response.text())
+    .then(data => console.log(data));
+
 
 // const list_items = [
 //     "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG",
@@ -46,7 +54,7 @@ const list_items = [
 //     "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG",
 // ]
 
-const list_element = document.getElementById('list');
+const list_element = document.getElementById('gallery');
 const pagination_element = document.getElementById('pagination');
 
 let current_page = 1;
@@ -63,11 +71,15 @@ function DisplayList (items, wrapper, rows_per_page, page) {
 	for (let i = 0; i < paginatedItems.length; i++) {
 		let item = paginatedItems[i];
 
-		let item_element = document.createElement('IMG');
-		// item_element.classList.add('');
-		item_element.src = item;
+		let col_element = document.createElement('div');
+		col_element.classList.add('col');
+		// let item_element = document.createElement('li');
+		let img_element = document.createElement('img');
+		img_element.src = item;
+		img_element.classList.add('img-fluid');
+		col_element.append(img_element);
 		
-		wrapper.appendChild(item_element);
+		wrapper.appendChild(col_element);
 	}
 }
 
