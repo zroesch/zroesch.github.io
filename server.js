@@ -15,7 +15,7 @@ app.listen(port, '0.0.0.0');
 
 // *** GET Routes - display pages ***
 // Root Route
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     var perseveranceLink = "nav-link";
     var curiosityLink = "nav-link";
     var oppurtunityLink = "nav-link";
@@ -30,7 +30,7 @@ app.get('/', function(req, res) {
 })
 
 // Perseverance page
-app.get('/perseverance', function(req, res) {
+app.get('/perseverance', function (req, res) {
     var perseveranceLink = "nav-link active";
     var curiosityLink = "nav-link";
     var oppurtunityLink = "nav-link";
@@ -45,7 +45,7 @@ app.get('/perseverance', function(req, res) {
 })
 
 // Curiosity page
-app.get('/curiosity', function(req, res) {
+app.get('/curiosity', function (req, res) {
     var perseveranceLink = "nav-link";
     var curiosityLink = "nav-link active";
     var oppurtunityLink = "nav-link";
@@ -60,7 +60,7 @@ app.get('/curiosity', function(req, res) {
 })
 
 // Spirit and Oppurtunity page
-app.get('/twins', function(req, res) {
+app.get('/twins', function (req, res) {
     var perseveranceLink = "nav-link";
     var curiosityLink = "nav-link";
     var oppurtunityLink = "nav-link active";
@@ -74,7 +74,7 @@ app.get('/twins', function(req, res) {
     });
 })
 
-app.get('/twins', function(req, res) {
+app.get('/twins', function (req, res) {
     var perseveranceLink = "nav-link";
     var curiosityLink = "nav-link";
     var oppurtunityLink = "nav-link active";
