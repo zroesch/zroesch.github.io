@@ -16,26 +16,76 @@ app.listen(port, '0.0.0.0');
 // *** GET Routes - display pages ***
 // Root Route
 app.get('/', function(req, res) {
-    res.render('pages/index');
+    var perseveranceLink = "nav-link";
+    var curiosityLink = "nav-link";
+    var oppurtunityLink = "nav-link";
+    var spiritLink = "nav-link";
+    res.render('pages/index', {
+        // EJS variable and server-side variable
+        perseveranceLink: perseveranceLink,
+        curiosityLink: curiosityLink,
+        oppurtunityLink: oppurtunityLink,
+        spiritLink: spiritLink
+    });
 })
 
 // Perseverance page
 app.get('/perseverance', function(req, res) {
-    res.render('pages/perseverance');
+    var perseveranceLink = "nav-link active";
+    var curiosityLink = "nav-link";
+    var oppurtunityLink = "nav-link";
+    var spiritLink = "nav-link";
+    res.render('pages/perseverance', {
+        // EJS variable and server-side variable
+        perseveranceLink: perseveranceLink,
+        curiosityLink: curiosityLink,
+        oppurtunityLink: oppurtunityLink,
+        spiritLink: spiritLink
+    });
 })
 
 // Curiosity page
 app.get('/curiosity', function(req, res) {
-    res.render('pages/curiosity');
+    var perseveranceLink = "nav-link";
+    var curiosityLink = "nav-link active";
+    var oppurtunityLink = "nav-link";
+    var spiritLink = "nav-link";
+    res.render('pages/curiosity', {
+        // EJS variable and server-side variable
+        perseveranceLink: perseveranceLink,
+        curiosityLink: curiosityLink,
+        oppurtunityLink: oppurtunityLink,
+        spiritLink: spiritLink
+    });
 })
 
 // Spirit and Oppurtunity page
 app.get('/twins', function(req, res) {
-    res.render('pages/oppurtunity');
+    var perseveranceLink = "nav-link";
+    var curiosityLink = "nav-link";
+    var oppurtunityLink = "nav-link active";
+    var spiritLink = "nav-link active";
+    res.render('pages/oppurtunity', {
+        // EJS variable and server-side variable
+        perseveranceLink: perseveranceLink,
+        curiosityLink: curiosityLink,
+        oppurtunityLink: oppurtunityLink,
+        spiritLink: spiritLink
+    });
 })
 
 app.get('/twins', function(req, res) {
-    res.render('pages/spirit');
+    var perseveranceLink = "nav-link";
+    var curiosityLink = "nav-link";
+    var oppurtunityLink = "nav-link active";
+    var spiritLink = "nav-link active";
+    res.render('pages/spirit', {
+        // EJS variable and server-side variable
+        perseveranceLink: perseveranceLink,
+        curiosityLink: curiosityLink,
+        oppurtunityLink: oppurtunityLink,
+        spiritLink: spiritLink
+    });
 })
 
 

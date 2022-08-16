@@ -8,16 +8,18 @@
       <div class="collapse navbar-collapse" id="navbarDark">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/perseverance">Perseverance</a>
+            <!-- aria-current="page"-->
+            <!-- a classes use variable from EJS -->
+            <a class=<%= perseveranceLink %> href="/perseverance">Perseverance</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/curiosity">Curiosity</a>
+            <a class=<%= curiosityLink %> href="/curiosity">Curiosity</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/twins">Oppurtunity</a>
+            <a class=<%= oppurtunityLink %> href="/twins">Oppurtunity</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/twins">Spirit</a>
+            <a class=<%= spiritLink %> href="/twins">Spirit</a>
           </li>
         </ul>
       </div>
