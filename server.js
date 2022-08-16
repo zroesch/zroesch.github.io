@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 // Port website will run on
 const hostname = '192.168.254.130';
 const port = 8080;
-app.listen(port);
+app.listen(port, '0.0.0.0');
 
 // *** GET Routes - display pages ***
 // Root Route
