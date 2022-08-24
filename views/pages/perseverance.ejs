@@ -20,15 +20,14 @@
       <div class="container-fluid bg-black">
         <div class="row ">
           <div class="col-auto">
-            <input type="date" id="dateInput">
+            <input type="date" id="dateInput" name="dateInput" value="2012-08-06" min="2012-08-06" max="2022-08-18">
           </div>
         </div>
       </div>
 
-      <!-- Date input event and handling -->
+      <!-- Date input event and handling
       <script>
         const dateInput = document.getElementById('dateInput');
-
         dateInput.addEventListener('change', event => {
           const inputDate = new Date(dateInput.value);
           // Need to add 1 to the date for some reason
@@ -38,113 +37,86 @@
           var month = inputDate.getMonth();
           var year = inputDate.getFullYear();
           console.log(day.toString() + month.toString() + year.toString());
+          
         })
-      </script>
-      <!-- Checkboxes for 15 cameras on the Perseverance Rover and Submit button-->
-      <div class="container-fluid bg-black">
-        <div class="row g-0" id="cameras">
-          <div class="col-auto">
-            <ul class="list-group d-flex">
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="EDL_RUCAM">
-                <label class="form-check-label text-white" for="EDL_RUCAM">
-                  Rover Up-Look Camera
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="EDL_RDCAM" checked>
-                <label class="form-check-label text-white" for="EDL_RDCAM">
-                  Rover Down-Look Camera
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="EDL_DDCAM">
-                <label class="form-check-label text-white" for="EDL_DDCAM">
-                  Descent Stage Down-Look Camera
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="EDL_PUCAM1" checked>
-                <label class="form-check-label text-white" for="EDL_PUCAM1">
-                  Parachute Up-Look Camera A
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="EDL_PUCAM2">
-                <label class="form-check-label text-white" for="flexChecEDL_PUCAM2kDefault">
-                  Parachute Up-Look Camera B
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="NAVCAM_LEFT">
-                <label class="form-check-label text-white " for="NAVCAM_LEFT">
-                  Navigation Camera - Left
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="NAVCAM_RIGHT">
-                <label class="form-check-label text-white " for="NAVCAM_RIGHT">
-                  Navigation Camera - Right
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="SKYCAM" checked>
-                <label class="form-check-label text-white" for="SKYCAM">
-                  MEDA Skycam
-                </label>
-              </li>
-          </div>
-          <div class="col-auto">
-            <ul class="list-group">
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="MCZ_LEFT" checked>
-                <label class="form-check-label text-white" for="MCZ_LEFT">
-                  Mast Camera Zoom - Left
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="MCZ_RIGHT">
-                <label class="form-check-label text-white" for="MCZ_RIGHT">
-                  Mast Camera Zoom - Right
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="FRONT_HAZCAM_LEFT_A" checked>
-                <label class="form-check-label text-white" for="FRONT_HAZCAM_LEFT_A">
-                  Front Hazard Avoidance Camera - Left
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="FRONT_HAZCAM_RIGHT_A">
-                <label class="form-check-label text-white" for="FRONT_HAZCAM_RIGHT_A">
-                  Front Hazard Avoidance Camera - Right
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="REAR_HAZCAM_LEFT" checked>
-                <label class="form-check-labe text-white" for="REAR_HAZCAM_LEFT">
-                  Rear Hazard Avoidance Camera - Left
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="REAR_HAZCAM_RIGHT" checked>
-                <label class="form-check-labe text-white" for="REAR_HAZCAM_RIGHT">
-                  Rear Hazard Avoidance Camera - Left
-                </label>
-              </li>
-              <li class="list-group-item bg-dark small py-1">
-                <input class="form-check-input" type="checkbox" value="" id="SHERLOC_WATSON" checked>
-                <label class="form-check-labe text-white" for="SHERLOC_WATSON">
-                  SHERLOC WATSON Camera
-                </label>
-              </li>
-            </ul>
-            <div class="row py-0 px-5" id="submitCameraButton">
-              <button type="button" class="btn btn-light  py-1" id="submitCamerasButton">Sumbit</button>
-            </div>
-          </div>
+      </script> -->
+
+
+
+
+      <!-- Dropdown menu for cameras -->
+      <div class="dropdown open">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Cameras
+        </button>
+        <div class="dropdown-menu" aria-labelledby="triggerId" id="cameras">
+          <!-- dropdown-item or dropdown-item disabled -->
+          <button class="dropdown-item" id="EDL_RUCAM" href="#">Rover Up-Look Camera</button>
+          <button class="dropdown-item" id="EDL_RDCAM" href="#">Rover Down-Look Camera</button>
+          <button class="dropdown-item" id="EDL_DDCAM" href="#">Descent Stage Down-Look Camera</button>
+          <button class="dropdown-item" id="EDL_PUCAM1" href="#">Parachute Up-Look Camera A</button>
+          <button class="dropdown-item" id="EDL_PUCAM2" href="#">Parachute Up-Look Camera B</button>
+          <button class="dropdown-item" id="NAVCAM_LEFT" href="#">Navigation Camera - Left</button>
+          <button class="dropdown-item" id="NAVCAM_RIGHT" href="#">Navigation Camera - Right</button>
+          <button class="dropdown-item" id="SKYCAM" href="#">MEDA Skycam</button>
+          <button class="dropdown-item" id="MCZ_LEFT" href="#">Mast Camera Zoom - Left</button>
+          <button class="dropdown-item" id="MCZ_RIGHT" href="#">Mast Camera Zoom - Right</button>
+          <button class="dropdown-item" id="FRONT_HAZCAM_LEFT_A" href="#">Front Hazard Avoidance Camera - Left</button>
+          <button class="dropdown-item" id="FRONT_HAZCAM_RIGHT_A" href="#">Front Hazard Avoidance Camera -
+            Right</button>
+          <button class="dropdown-item" id="REAR_HAZCAM_LEFT" href="#">Rear Hazard Avoidance Camera - Left</button>
+          <button class="dropdown-item" id="REAR_HAZCAM_RIGHT" href="#">Rear Hazard Avoidance Camera - Right</button>
+          <button class="dropdown-item" id="SHERLOC_WATSON" href="#">SHERLOC WATSON Camera</button>
         </div>
       </div>
+      
+      <!-- Event listener for change in the date, updates the disabled cameras based on if they have pics-->
+      <script>
+        const dateInput = document.getElementById('dateInput');
+        const cameraList = document.getElementById('cameras').getElementsByTagName('Button');
+        console.log(cameraList[1].id);
+        dateInput.addEventListener('change', event => {
+          const inputDate = new Date(dateInput.value);
+          inputDate.setDate(inputDate.getDate() + 1);
+          var day = inputDate.getDate();
+          var month = inputDate.getMonth();
+          var year = inputDate.getFullYear();
+
+          
+
+          
+
+          // <p id="testing"></p>
+
+        // const submit = document.getElementById('submitCamerasButton')
+        // const cameraList = document.getElementById('cameras').getElementsByClassName('list-group-item bg-dark small py-1');
+        // const testingList = document.getElementById('testing');
+
+        // submit.addEventListener('click', event => {
+        //   while (testingList.firstChild) {
+        //     testingList.removeChild(testingList.firstChild);
+        //   }
+        //   for (let i = 0; i < cameraList.length; i++) {
+        //     if (cameraList[i].firstElementChild.checked == true) {
+        //       let item = cameraList[i].firstElementChild.id;
+        //       let item_element = document.createElement('div');
+        //       item_element.classList.add('item');
+        //       item_element.innerText = item;
+
+        //       testingList.appendChild(item_element);
+        //     };
+        //   }
+        // })
+                    
+          ;
+        })
+      </script>
+
+      <!-- Setting the button class as active or disabled -->
+
+
+      
 
       <!-- Gallery of Images. 
       responses are limited to 25 photos per call. more are put on different pages accessed by page param in query 
@@ -155,9 +127,7 @@
         </div>
       </div>
 
-      <div class="pagenumbers" id="pagination"></div>
 
-      <script src="gallery.js"></script>
 
 
       <!-- <div class="row p-5">
@@ -175,30 +145,17 @@
         </div>
       </div> -->
 
+      <ul class="list-group">
+        <ul class="list-group list-group-horizontal">
+          <!-- <li class='list-group-item'> An Item </li> -->
+        </ul>
+      </ul>
+      <ul class="list-group list-group-horizontal">
+
+      </ul>
 
       <!-- Captures user input from the checkbox submission-->
-      <p id="testing"></p>
-      <script>
-        const submit = document.getElementById('submitCamerasButton')
-        const cameraList = document.getElementById('cameras').getElementsByClassName('list-group-item bg-dark small py-1');
-        const testingList = document.getElementById('testing');
 
-        submit.addEventListener('click', event => {
-          while (testingList.firstChild) {
-            testingList.removeChild(testingList.firstChild);
-          }
-          for (let i = 0; i < cameraList.length; i++) {
-            if (cameraList[i].firstElementChild.checked == true) {
-              let item = cameraList[i].firstElementChild.id;
-              let item_element = document.createElement('div');
-              item_element.classList.add('item');
-              item_element.innerText = item;
-
-              testingList.appendChild(item_element);
-            };
-          }
-        })
-      </script>
       <!-- addEventListener()
         document.querySelecter or document. document.getElementById-->
 

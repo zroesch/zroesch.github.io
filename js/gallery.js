@@ -1,6 +1,7 @@
+import fetch from 'node-fetch';
 //https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=DEMO_KEY&sol=1000
-PHOTO_API = "https://api.nasa.gov/mars-photos/api/v1/";
-API_KEY = "StNlCS93Xlj0xJVWSdFm27AdrCpMxr8HvlYrQub5";
+const PHOTO_API = "https://api.nasa.gov/mars-photos/api/v1/";
+const API_KEY = "StNlCS93Xlj0xJVWSdFm27AdrCpMxr8HvlYrQub5";
 
 /**
  * https://api.nasa.gov/mars-photos/api/v1/
@@ -19,61 +20,67 @@ API_KEY = "StNlCS93Xlj0xJVWSdFm27AdrCpMxr8HvlYrQub5";
  * Possible Input
  * date 
  */
+// const responseText = (PHOTO_API + 'rovers/' + 'curiosity/' + 'photos?sol=1000&page=2&api_key=" + API_KEY')
+// console.log(responseText);
+const response = await fetch(PHOTO_API + 'rovers/' + 'curiosity/' + 'photos?sol=1000&page=2&api_key=' + API_KEY);
+const data = await response.json();
 
-function apiCall(target){
-	return (PHOTO_API + )
-}
+console.log(data);
 
-const perseverance = {
-	roverName: "Perseverance",
+// function apiCall(target){
+// 	return (PHOTO_API + )
+// }
 
-}
+// const perseverance = {
+// 	roverName: "Perseverance",
 
-const MissionManifest{
-	target: "manifests/",
+// }
+
+// const MissionManifest{
+// 	target: "manifests/",
 	
-	api_url = apiCall(this.target)
-	// Make start of Manifest URL for API
-	apiCall(target){
-		// Returns //https://api.nasa.gov/mars-photos/api/v1/manifests/
-		return (PHOTO_API + this.#manifest);
-	}
+// 	api_url = apiCall(this.target)
+// 	// Make start of Manifest URL for API
+// 	apiCall(target){
+// 		// Returns //https://api.nasa.gov/mars-photos/api/v1/manifests/
+// 		return (PHOTO_API + this.#manifest);
+// 	}
 
-// Rover
- Rover extends MissionManifest{
-	target: 'rover',
+// // Rover
+//  Rover extends MissionManifest{
+// 	target: 'rover',
 
-	api_url = apiCall(this.target)
-}
+// 	api_url = apiCall(this.target)
+// }
 
-// Perseverance Rover
-class Perseverance extends Rover{
-	#roverName = 'Perseverance';
-	cameras = {
-		EDL_RUCAM: "EDL_RUCAM"
-	}
-}
+// // Perseverance Rover
+// class Perseverance extends Rover{
+// 	#roverName = 'Perseverance';
+// 	cameras = {
+// 		EDL_RUCAM: "EDL_RUCAM"
+// 	}
+// }
 
-class Curiosity extends Rover{
-	#roverName = 'Curiosity';
-	cameras = {
+// class Curiosity extends Rover{
+// 	#roverName = 'Curiosity';
+// 	cameras = {
 
-	}
-}
+// 	}
+// }
 
-class Oppurtunity extends Rover{
-	#roverName = 'Oppurtunity';
-	cameras = {
+// class Oppurtunity extends Rover{
+// 	#roverName = 'Oppurtunity';
+// 	cameras = {
 
-	}
-}
+// 	}
+// }
 
-class Spirit extends Rover{
-	#roverName = 'Spirit';
-	cameras = {
+// class Spirit extends Rover{
+// 	#roverName = 'Spirit';
+// 	cameras = {
 
-	}
-}
+// 	}
+// }
 
 
 // Date function objects
